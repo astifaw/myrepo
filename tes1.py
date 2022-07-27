@@ -45,11 +45,39 @@ class TestLogin(unittest.TestCase):
         self.assertEqual(response_data, 'Email tidak valid')
         self.assertEqual(response_message, 'Cek kembali email anda')
 
-    def test_c_failed_login_with_empty_email(self):
-        print ("tulis disini test case mu")
+    def test_c_failed_login_with_empty_password(self):
+        driver = self.driver
+        driver.get("http://barru.pythonanywhere.com/daftar") # buka situs
+        time.sleep(3)
+        driver.find_element(By.ID,"email").send_keys("tester@jagoqa.com") # isi email
+        time.sleep(1)
+        driver.find_element(By.ID,"password").send_keys("") # isi password
+        time.sleep(1)
+        driver.find_element(By.ID,"signin_login").click()
+        time.sleep(1)
 
-    def test_d_failed_login_with_empty_email(self):
-        print ("tulis disini test case mu")
+        response_data = driver.find_element(By.ID,"swal2-title").text
+        response_message = driver.find_element(By.ID,"swal2-content").text
+
+        self.assertEqual(response_data, 'not found')
+        self.assertEqual(response_message, 'Email atau Password Anda Salah')
+
+    def test_d_failed_login_with_wrong_password(self):
+        driver = self.driver
+        driver.get("http://barru.pythonanywhere.com/daftar") # buka situs
+        time.sleep(3)
+        driver.find_element(By.ID,"email").send_keys("tester@jagoqa.com") # isi email
+        time.sleep(1)
+        driver.find_element(By.ID,"password").send_keys("xxxxxx") # isi password
+        time.sleep(1)
+        driver.find_element(By.ID,"signin_login").click()
+        time.sleep(1)
+
+        response_data = driver.find_element(By.ID,"swal2-title").text
+        response_message = driver.find_element(By.ID,"swal2-content").text
+
+        self.assertEqual(response_data, 'not found')
+        self.assertEqual(response_message, 'Email atau Password Anda Salah')
 
     def tearDown(self): 
         self.driver.close() 
