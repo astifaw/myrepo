@@ -14,7 +14,7 @@ class TestLogin(unittest.TestCase):
         driver = self.driver
         driver.get("http://barru.pythonanywhere.com/daftar") # buka situs
         time.sleep(3)
-        driver.find_element(By.ID,"email").send_keys("tester@jagoqa.com") # isi email
+        driver.find_element(By.ID,"email").send_keys("tester@jagoqa.comx") # isi email
         time.sleep(1)
         driver.find_element(By.ID,"password").send_keys("testerjago") # isi password
         time.sleep(1)
