@@ -59,7 +59,7 @@ class TestLogin(unittest.TestCase):
         response_data = driver.find_element(By.ID,"swal2-title").text
         response_message = driver.find_element(By.ID,"swal2-content").text
 
-        self.assertEqual(response_data, 'not found')
+        self.assertEqual(response_data, "User's not found")
         self.assertEqual(response_message, 'Email atau Password Anda Salah')
 
     def test_d_failed_login_with_wrong_password(self):
@@ -76,7 +76,7 @@ class TestLogin(unittest.TestCase):
         response_data = driver.find_element(By.ID,"swal2-title").text
         response_message = driver.find_element(By.ID,"swal2-content").text
 
-        self.assertEqual(response_data, 'not found')
+        self.assertEqual(response_data, "User's not found")
         self.assertEqual(response_message, 'Email atau Password Anda Salah')
 
     def tearDown(self): 
