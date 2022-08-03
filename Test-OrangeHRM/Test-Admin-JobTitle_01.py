@@ -21,7 +21,7 @@ class Test_Admin_JobTitle(unittest.TestCase):
         driver.get(url) # buka situs
         time.sleep(3)
         driver.find_element(By.ID,"txtUsername").send_keys(username) #input username
-        time.sleep(3)
+        time.sleep(1)
         driver.find_element(By.ID,"txtPassword").send_keys(password) #input password
         time.sleep(1)
         driver.find_element(By.ID,"btnLogin").click() #klik button login

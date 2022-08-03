@@ -21,7 +21,7 @@ class Test_Admin_Nationalities(unittest.TestCase):
         driver.get(url) # buka situs
         time.sleep(3)
         driver.find_element(By.ID,"txtUsername").send_keys(username)
-        time.sleep(3)
+        time.sleep(1)
         driver.find_element(By.ID,"txtPassword").send_keys(password)
         time.sleep(1)
         driver.find_element(By.ID,"btnLogin").click()
@@ -46,8 +46,6 @@ class Test_Admin_Nationalities(unittest.TestCase):
         time.sleep(3)
         driver.find_element(By.ID,"btnSave").click()
         time.sleep(3)
-                    
-    expected_current_url = url
 
     def test_C_Add_Existing_Nationality (self):
         driver = self.driver
