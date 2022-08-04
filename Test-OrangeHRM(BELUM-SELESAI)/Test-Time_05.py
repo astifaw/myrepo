@@ -18,7 +18,7 @@ date_yesterday="2022-06-30" #punch in date has passed
 time_punchin='08:00' #punch in time
 time_punchout='16:00' #punch out time
 
-class Test_Leave(unittest.TestCase): 
+class Test_Time(unittest.TestCase): 
 
     def setUp(self): 
         self.driver = webdriver.Chrome(ChromeDriverManager().install())
