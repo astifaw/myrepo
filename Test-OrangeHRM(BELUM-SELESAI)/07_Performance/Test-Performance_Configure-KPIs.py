@@ -15,7 +15,7 @@ username="Admin" # username admin
 password="admin123" # password admin
 KPI="Responsibility"
 
-class Test_MyInfo_EmergencyContact(unittest.TestCase): 
+class Test_Performance_Configure_KPIs(unittest.TestCase): 
 
     def setUp(self): 
         self.driver = webdriver.Chrome(ChromeDriverManager().install())

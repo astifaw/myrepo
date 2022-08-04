@@ -27,7 +27,7 @@ class Test_Admin_Nationalities(unittest.TestCase):
         driver.find_element(By.ID,"btnLogin").click()
         time.sleep(3)
 
-    def test_A_Add_Check_Field_Mandatory (self):
+    def test_A_Add_Check_Field_Mandatory (self): #check info field mandatory
         driver = self.driver
         driver.find_element(By.ID,"btnAdd").click()
         time.sleep(3)
@@ -36,9 +36,9 @@ class Test_Admin_Nationalities(unittest.TestCase):
                     
         response_data = driver.find_element(By.XPATH,"/html[1]/body[1]/div[1]/div[3]/div[1]/div[2]/form[1]/fieldset[1]/ol[1]/li[1]/span[1]").text
         
-        self.assertEqual(response_data, 'Required')
+        self.assertEqual(response_data, 'Required') #expected muncul info Required
         
-    def test_B_Add_New_Nationality (self):
+    def test_B_Add_New_Nationality_success (self):
         driver = self.driver
         driver.find_element(By.ID,"btnAdd").click()
         time.sleep(3)

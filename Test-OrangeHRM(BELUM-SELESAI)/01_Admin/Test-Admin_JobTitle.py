@@ -29,33 +29,33 @@ class Test_Admin_JobTitle(unittest.TestCase):
 
     def test_A_Add_Check_Field_Mandatory (self):
         driver = self.driver
-        driver.find_element(By.ID,"btnAdd").click()
+        driver.find_element(By.ID,"btnAdd").click()  #klik button Add
         time.sleep(2)
-        driver.find_element(By.ID,"btnSave").click()
+        driver.find_element(By.ID,"btnSave").click() #klik button Save
         time.sleep(3)
                     
         response_data = driver.find_element(By.XPATH,"/html[1]/body[1]/div[1]/div[3]/div[1]/div[2]/form[1]/fieldset[1]/ol[1]/li[1]/span[1]").text
         
-        self.assertEqual(response_data, 'Required')
+        self.assertEqual(response_data, 'Required') #Expected result, muncul info Required
         
     def test_B_Add_New_JobTitle (self):
         driver = self.driver
-        driver.find_element(By.ID,"btnAdd").click()
+        driver.find_element(By.ID,"btnAdd").click() #klik button Add
         time.sleep(3)
-        driver.find_element(By.ID,"jobTitle_jobTitle").send_keys(jobtitle)
+        driver.find_element(By.ID,"jobTitle_jobTitle").send_keys(jobtitle) #isi data job title
         time.sleep(3)
-        driver.find_element(By.ID,"jobTitle_jobDescription").send_keys("will be describe later")
+        driver.find_element(By.ID,"jobTitle_jobDescription").send_keys("will be describe later") #isi deskripsi
         time.sleep(1)
-        driver.find_element(By.ID,"btnSave").click()
+        driver.find_element(By.ID,"btnSave").click() #klik button Save
         time.sleep(3)
                     
-    expected_current_url = "https://opensource-demo.orangehrmlive.com/index.php/admin/viewJobTitleList"
+    expected_current_url = "https://opensource-demo.orangehrmlive.com/index.php/admin/viewJobTitleList" #berhasil save, kembali ke page list
 
     def test_C_Add_Existing_JobTitle (self):
         driver = self.driver
         driver.find_element(By.ID,"btnAdd").click()
         time.sleep(2)
-        driver.find_element(By.ID,"jobTitle_jobTitle").send_keys(jobtitle)
+        driver.find_element(By.ID,"jobTitle_jobTitle").send_keys(jobtitle) #input existing job title
         time.sleep(3)
 
         response_data = driver.find_element(By.XPATH,"/html[1]/body[1]/div[1]/div[3]/div[1]/div[2]/form[1]/fieldset[1]/ol[1]/li[1]/span[1]").text
