@@ -30,7 +30,7 @@ class Test_Leave(unittest.TestCase):
         driver.find_element(By.ID,"btnLogin").click()
         time.sleep(3)
 
-    def test_A_Entitlements_Add_Entitlements (self):
+    def test_A_Entitlements_Add_Success (self):
         driver = self.driver
         driver.find_element(By.ID,"menu_leave_Entitlements").click()
         time.sleep(1)
